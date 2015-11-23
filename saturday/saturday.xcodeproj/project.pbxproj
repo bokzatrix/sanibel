@@ -328,6 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = saturday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bokzatrix.saturday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -339,6 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = saturday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bokzatrix.saturday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +390,7 @@
 				2283EA2D1C011835008E6534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2283EA2E1C011835008E6534 /* Build configuration list for PBXNativeTarget "saturdayTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +399,7 @@
 				2283EA301C011835008E6534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
