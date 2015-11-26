@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eim-2i-zkY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -48,26 +48,10 @@
                                     <segue destination="EA0-ox-pzE" kind="show" id="tyQ-lB-uJa"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fo-e6-Ogs">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2bx-MM-XFI"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Title" id="1nh-U2-mbB">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="P6o-bZ-Us6"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="7yk-lz-7Ju"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1Fo-e6-Ogs" firstAttribute="leading" secondItem="vJl-lf-je1" secondAttribute="leadingMargin" constant="-20" id="6K8-K5-W3e"/>
-                            <constraint firstItem="hxS-bW-kTV" firstAttribute="top" secondItem="1Fo-e6-Ogs" secondAttribute="bottom" constant="35" id="8bl-9m-Ihr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Fo-e6-Ogs" secondAttribute="trailing" constant="-20" id="AWs-vT-duj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QNo-6P-5An" secondAttribute="trailing" id="J9p-1Z-uwo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hxS-bW-kTV" secondAttribute="leading" id="Rjk-q7-gFv"/>
                             <constraint firstItem="QNo-6P-5An" firstAttribute="top" secondItem="hxS-bW-kTV" secondAttribute="bottom" constant="37" id="YqW-JL-bn9"/>
@@ -76,10 +60,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hxS-bW-kTV" secondAttribute="trailing" id="mUT-PO-EfD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pVp-mw-cpK"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="-266"/>
+            <point key="canvasLocation" x="908" y="-266"/>
         </scene>
         <!--Collection Collection View Controller-->
         <scene sceneID="qRb-9L-VV9">
@@ -97,7 +83,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Image" id="jL6-ec-LRT" customClass="CollectionViewCell" customModule="saturday" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="136" height="136"/>
+                                <rect key="frame" x="8" y="72" width="136" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
@@ -125,7 +111,26 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7p-nx-wFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="-291"/>
+            <point key="canvasLocation" x="1681" y="-291"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LDG-Eb-tCW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eim-2i-zkY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CLi-ku-2kO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uwk-JS-NfS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JdD-ZL-JuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="-266"/>
         </scene>
     </scenes>
     <resources>
