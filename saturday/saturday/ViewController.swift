@@ -11,20 +11,40 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SelectedImageDelegate {
 
+
+    @IBOutlet weak var galleryButtonImage: UIImageView!
     @IBOutlet weak var navBarTitle: UINavigationItem!
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navBarTitle.title = "View Finder"
-  
+       // navBarTitle.title = self.title
+       galleryButtonImage.image = UIImage(named: "cellImage")
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func collectionViewController(viewController: CollectionCollectionViewController, selectedImage: Int) {
+        print("called delegate method")
+        galleryButtonImage.image = UIImage(named: "Image-\(selectedImage)")
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showGallery" {
+        var collection = segue.destinationViewController as! CollectionCollectionViewController
+            print("has the id changed \(collection)")
+            collection.delegate = self
+        
+        }
     }
 
 

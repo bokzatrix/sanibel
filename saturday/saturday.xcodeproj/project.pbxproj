@@ -13,6 +13,7 @@
 		2283EA191C011835008E6534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2283EA181C011835008E6534 /* Assets.xcassets */; };
 		2283EA1C1C011835008E6534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2283EA1A1C011835008E6534 /* LaunchScreen.storyboard */; };
 		2283EA271C011835008E6534 /* saturdayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283EA261C011835008E6534 /* saturdayTests.swift */; };
+		228BB1481C0B3DC500F6F2AC /* SelectedImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BB1471C0B3DC500F6F2AC /* SelectedImageDelegate.swift */; };
 		22F612951C0726B9003B55EF /* CollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F612941C0726B9003B55EF /* CollectionCollectionViewController.swift */; };
 		22F612971C072703003B55EF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F612961C072703003B55EF /* CollectionViewCell.swift */; };
 		22F612991C074063003B55EF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F612981C074063003B55EF /* ImageLoader.swift */; };
@@ -41,6 +42,7 @@
 		2283EA221C011835008E6534 /* saturdayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saturdayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2283EA261C011835008E6534 /* saturdayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saturdayTests.swift; sourceTree = "<group>"; };
 		2283EA281C011835008E6534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228BB1471C0B3DC500F6F2AC /* SelectedImageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedImageDelegate.swift; sourceTree = "<group>"; };
 		22F612941C0726B9003B55EF /* CollectionCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCollectionViewController.swift; sourceTree = "<group>"; };
 		22F612961C072703003B55EF /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		22F612981C074063003B55EF /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		2283EA101C011835008E6534 /* saturday */ = {
 			isa = PBXGroup;
 			children = (
+				228BB1471C0B3DC500F6F2AC /* SelectedImageDelegate.swift */,
 				2283EA111C011835008E6534 /* AppDelegate.swift */,
 				2283EA131C011835008E6534 /* ViewController.swift */,
 				22F612941C0726B9003B55EF /* CollectionCollectionViewController.swift */,
@@ -217,6 +220,7 @@
 				22F612951C0726B9003B55EF /* CollectionCollectionViewController.swift in Sources */,
 				22F612991C074063003B55EF /* ImageLoader.swift in Sources */,
 				22F612971C072703003B55EF /* CollectionViewCell.swift in Sources */,
+				228BB1481C0B3DC500F6F2AC /* SelectedImageDelegate.swift in Sources */,
 				2283EA121C011835008E6534 /* AppDelegate.swift in Sources */,
 				22F612CB1C07BDB3003B55EF /* DetailViewController.swift in Sources */,
 			);

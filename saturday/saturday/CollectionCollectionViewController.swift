@@ -14,12 +14,15 @@ class CollectionCollectionViewController: UICollectionViewController {
     
      let imageLoaderInstance = ImageLoader()
     var selectedIndex = 0
+    weak var delegate : SelectedImageDelegate? = nil
+    
+
     
     @IBOutlet weak var galleryTItle: UINavigationItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        print("id for collection actual \(self)")
         print("images should be loaded \(imageLoaderInstance.imageArray)")
         galleryTItle.title = "Gallery"
         
@@ -44,24 +47,13 @@ class CollectionCollectionViewController: UICollectionViewController {
         
         if segue.identifier == "showDetail" {
         let detailVC = segue.destinationViewController as! DetailViewController
+            print(detailVC.description)
         var imageToBeLoaded = "Image-\(selectedIndex)"
-            print("the image to be loaded is??? \(imageToBeLoaded)")
-        detailVC.detailImage.image = UIImage(named: imageToBeLoaded)
+        print("the image to be loaded is??? \(imageToBeLoaded)")
+        detailVC.image = UIImage(named: imageToBeLoaded)!
             
         }
-        
-        /*    if ([segue.identifier isEqualToString:@"showDetail"])
-        {
-        NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
-        
-        // load the image, to prevent it from being cached we use 'initWithContentsOfFile'
-        NSString *imageNameToLoad = [NSString stringWithFormat:@"%ld_full", (long)selectedIndexPath.row];
-        UIImage *image = [UIImage imageNamed:imageNameToLoad];
-        DetailViewController *detailViewController = segue.destinationViewController;
-        detailViewController.image = image;
-        }*/
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+
     }
 
     // MARK: UICollectionViewDataSource
@@ -85,8 +77,8 @@ class CollectionCollectionViewController: UICollectionViewController {
         
         var imageToBeLoaded = "Image-\(indexPath.row)"
         print(imageToBeLoaded)
+
         cell.image.image = UIImage(named: imageToBeLoaded)
-        
     
         return cell
     }
@@ -104,7 +96,9 @@ class CollectionCollectionViewController: UICollectionViewController {
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         selectedIndex = indexPath.row
-        print("selected item \(indexPath.row)")
+        print("selected item in collection view \(indexPath.row)")
+        delegate?.collectionViewController(self, selectedImage: indexPath.row)
+        print(delegate.debugDescription)
         return true
     }
 

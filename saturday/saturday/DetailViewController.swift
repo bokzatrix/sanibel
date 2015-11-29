@@ -12,8 +12,16 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailImage: UIImageView!
     
+    var image = UIImage()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+            print("what is the detailImage \(detailImage.image)")
+        self.detailImage.image = self.image
+
+        
+        
 
         // Do any additional setup after loading the view.
     }

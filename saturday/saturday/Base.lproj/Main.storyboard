@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eim-2i-zkY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eim-2i-zkY">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--vctitle-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="saturday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="vctitle" id="BYZ-38-t0r" customClass="ViewController" customModule="saturday" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WGK-eG-nn1"/>
                         <viewControllerLayoutGuide type="bottom" id="U7b-0t-FN0"/>
@@ -50,6 +50,12 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6D-Qi-y3R">
                                         <rect key="frame" x="14" y="8" width="80" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6SZ-77-246">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <animations/>
+                                            </imageView>
+                                        </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
@@ -83,24 +89,26 @@
                         <barButtonItem key="leftBarButtonItem" title="back" id="bHx-Oh-ufH"/>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="galleryButtonImage" destination="6SZ-77-246" id="2Jq-Tv-Xl5"/>
                         <outlet property="navBarTitle" destination="pVp-mw-cpK" id="og2-9r-STb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="jVS-HD-tYk">
                     <connections>
-                        <segue destination="EA0-ox-pzE" kind="show" identifier="showDetail" id="qh1-oJ-xKz"/>
+                        <segue destination="EA0-ox-pzE" kind="show" identifier="showGallery" id="qh1-oJ-xKz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="908" y="-266"/>
         </scene>
-        <!--Title-->
+        <!--Gallery-->
         <scene sceneID="qRb-9L-VV9">
             <objects>
-                <collectionViewController id="EA0-ox-pzE" customClass="CollectionCollectionViewController" customModule="saturday" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="collection" id="EA0-ox-pzE" userLabel="Gallery" customClass="CollectionCollectionViewController" customModule="saturday" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7Vy-Gg-Iw5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +121,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Image" id="jL6-ec-LRT" customClass="CollectionViewCell" customModule="saturday" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="136" height="136"/>
+                                <rect key="frame" x="8" y="72" width="136" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
@@ -130,7 +138,7 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="image" destination="wYE-bA-Ecd" id="tL8-iy-Qu6"/>
-                                    <segue destination="On4-1Z-ACT" kind="showDetail" identifier="showDetail" id="spQ-ez-1Lj"/>
+                                    <segue destination="On4-1Z-ACT" kind="show" identifier="showDetail" id="gbq-7Q-l0C"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -141,7 +149,7 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="Yb9-rA-lvS"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="galleryTItle" destination="Yb9-rA-lvS" id="0ow-TA-fbe"/>
                     </connections>
@@ -150,7 +158,7 @@
             </objects>
             <point key="canvasLocation" x="1681" y="-291"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="ETv-hc-uEM">
             <objects>
                 <viewController id="On4-1Z-ACT" customClass="DetailViewController" customModule="saturday" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,16 +170,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kTN-Ik-W7F">
-                                <rect key="frame" x="20" y="140" width="560" height="440"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kTN-Ik-W7F">
+                                <rect key="frame" x="20" y="140" width="560" height="200"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="uHl-Qk-zQS"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="kTN-Ik-W7F" secondAttribute="trailing" id="8IT-lB-d5E"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="kTN-Ik-W7F" secondAttribute="leading" id="o23-gJ-Coi"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="1Av-lp-UnR" userLabel="NavBar">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="8GE-6j-QkN"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="detailImage" destination="kTN-Ik-W7F" id="Ccg-fk-Txh"/>
+                        <outlet property="detailImage" destination="kTN-Ik-W7F" id="daH-Ds-PRg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMJ-Op-Wzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -183,6 +202,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eim-2i-zkY" customClass="NavigationController" customModule="saturday" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CLi-ku-2kO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
